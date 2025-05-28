@@ -1,0 +1,81 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block content %}
+
+<section style="background-image: url(https://via.placeholder.com/1920x679);" class="bannr">
+  <div class="container">
+    <div class="bannr-text">
+      <h2>Contact Us</h2>
+      <p>Practical renewable energy technology thatreduces costs and helps the environment</p>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+        </li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="gap content-page">
+  <div class="container">
+    <div class="heading">
+      <img src="{% static 'assets/img/heading-img.png '%}" alt="img">
+      <span>talk about how we can help</span>
+      <h2>We'd Love to Hear From!</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <form class="content-form" id="contact-form" method="post">
+          <h4>Let’s Get in Touch</h4>
+          <div class="inputbox">
+            <input type="text" name="Complete_Name" placeholder="Complete Name" required="">
+          </div>
+          <div class="inputbox">
+            <input type="email" name="Email_Address" placeholder="Email Address" required="">
+          </div>
+          <select class="nice-select Advice">
+            <option>Select Service</option>
+            <option>Services 1</option>
+            <option>Services 2</option>
+            <option>Services 3</option>
+            <option>Services 4</option>
+          </select>
+          <div class="textareabox">
+            <textarea placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn bk">Submit Now</button>
+        </form>
+      </div>
+      <div class="col-lg-4">
+        <div class="content-page-info">
+          <div class="d-flex align-items-center"><h3>Phone No:</h3><i class="flaticon-iphone"></i></div>
+          <h5>United State   -   <a href="callto:01234525407">01234 525 407</a></h5>
+          <h5>America   -  <a href="callto:01234525407">01234 525 407</a></h5>
+        </div>
+        <div class="content-page-info">
+          <div class="d-flex align-items-center"><h3>Location:</h3>
+            <i><svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.4997 9.77051C15.0331 9.77051 13.0264 11.7773 13.0264 14.2438C13.0264 16.7104 15.0331 18.7171 17.4997 18.7171C19.9663 18.7171 21.973 16.7104 21.973 14.2438C21.973 11.7773 19.9662 9.77051 17.4997 9.77051Z" fill="black"/>
+                <path d="M27.9679 4.33576C25.172 1.53979 21.4545 0 17.5005 0C13.5464 0 9.82899 1.53979 7.03309 4.33576C4.23706 7.1318 2.69727 10.8492 2.69727 14.8032C2.69727 22.8021 10.2605 29.4552 14.3238 33.0295C14.8884 33.5262 15.376 33.9551 15.7644 34.3178C16.2512 34.7727 16.8757 35 17.5004 35C18.1251 35 18.7498 34.7726 19.2365 34.318C19.625 33.9551 20.1125 33.5262 20.6771 33.0295C24.7404 29.4552 32.3036 22.8022 32.3036 14.8032C32.3036 10.8492 30.7638 7.1318 27.9679 4.33576ZM17.5005 20.7674C13.9033 20.7674 10.977 17.841 10.977 14.2438C10.977 10.6467 13.9033 7.7203 17.5005 7.7203C21.0976 7.7203 24.024 10.6467 24.024 14.2438C24.024 17.841 21.0976 20.7674 17.5005 20.7674Z" fill="black"/>
+                </svg></i></div>
+          <h5>12/7 new town, 245x Town 1214 Street, United State</h5>
+        </div>
+        <div class="content-page-info">
+          <div class="d-flex align-items-center"><h3>Email Id:</h3><i><svg width="33" height="27" viewBox="0 0 33 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.45801 18.2397C0.853946 18.2397 0.364258 18.7295 0.364258 19.3335C0.364258 19.9375 0.853946 20.4272 1.45801 20.4272H5.83301C6.43706 20.4272 6.92676 19.9375 6.92676 19.3335C6.92676 18.7295 6.43706 18.2397 5.83301 18.2397H1.45801Z" fill="black"/>
+              <path d="M1.45801 22.6147C0.853946 22.6147 0.364258 23.1045 0.364258 23.7085C0.364258 24.3125 0.853946 24.8022 1.45801 24.8022H10.208C10.8121 24.8022 11.3018 24.3125 11.3018 23.7085C11.3018 23.1045 10.8121 22.6147 10.208 22.6147H1.45801Z" fill="black"/>
+              <path d="M4.53374 3.42302L4.375 3.29167C4.82475 2.67265 5.30337 2.21733 5.92239 1.76758C7.83912 0.375 10.5733 0.375 16.0417 0.375H18.9583C24.4266 0.375 27.1609 0.375 29.0776 1.76758C29.6966 2.21733 30.1375 2.62276 30.5872 3.24178L30.4041 3.42394L27.0384 6.78964C24.5859 9.24206 22.8228 11.0019 21.302 12.1623C19.8065 13.3033 18.6747 13.7609 17.4999 13.7609C16.3249 13.7609 15.1931 13.3033 13.6976 12.1623C12.1768 11.0019 10.4137 9.24206 7.96123 6.78964L5.12731 3.95572L4.53374 3.42302Z" fill="black"/>
+              <path d="M2.91602 13.5C2.91602 9.65013 2.91602 7.15547 3.40196 5.34716L3.62163 5.54431L6.47295 8.39561C8.85334 10.776 10.7188 12.6415 12.37 13.9013C14.0601 15.1908 15.6537 15.9484 17.4992 15.9484C19.3446 15.9484 20.9382 15.1908 22.6283 13.9013C24.2794 12.6415 26.1449 10.776 28.5254 8.39564L31.5918 5.3291C32.0827 7.13885 32.0827 9.63731 32.0827 13.5C32.0827 18.9683 32.0827 21.7026 30.6901 23.6192C30.2404 24.2383 29.696 24.7827 29.0769 25.2324C27.1602 26.625 24.426 26.625 18.9577 26.625H16.041C13.958 26.625 12.2717 26.625 10.8762 26.548C12.1648 26.2458 13.1243 25.0891 13.1243 23.7083C13.1243 22.0975 11.8185 20.7917 10.2077 20.7917H8.35916C8.60732 20.3626 8.74935 19.8646 8.74935 19.3333C8.74935 17.7225 7.44351 16.4167 5.83268 16.4167H2.92653C2.91602 15.5401 2.91602 14.5726 2.91602 13.5Z" fill="black"/>
+              </svg>
+          </i></div>
+          <h5>United State   -   <a href="mailto:info@example.com">info@example.com</a></h5>
+          <h5>America   -  <a href="mailto:info@example.com">info@example.com</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="mapouter"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26358986.39359313!2d-113.7115859681645!3d36.24800244048599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2s!4v1676996184286!5m2!1sen!2s" width="600" height="450" style="border:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+
+{% endblock %}
