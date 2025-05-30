@@ -36,8 +36,8 @@
           <div>
             <div class="phone-data">
               <div class="phone">
-                <i class="flaticon-iphone"></i>
-                <span>Call Agent:</span><a href="callto:+18880002222">+1 888 000 2222</a>
+                <img src="assets/img/" alt="Phone icon" width="24" height="24">
+                <span>Call Agent:</span><a href="callto:+998 95 097 00 50">+998 95 097 00 50<br>+998 97 370 37 07</a>
               </div>
               <div class="phone d-flax align-items-center">
                 <i>
@@ -56,8 +56,9 @@
                       fill="black" />
                   </svg>
                 </i>
-                <span>Send Email: </span>
-                <a class="me-3" href="mailto:info@example.com">info@example.com</a>
+                <span><strong>Send Email:</strong> </span>
+                <div><a class="me-3" href="mailto:luxof@proton.me">luxof@proton.me</a></div<>
+                <div><a class="me-3" href="mailto:lucsov@proton.me">lucsov@proton.me</a></div>
               </div>
             </div>
           </div>
@@ -72,19 +73,14 @@
     <div class="bottom-bar">
       <div class="container">
         <div class="bottom-bar-text">
-          <a href="index.html"><img src="{% static 'assets/img/logo.png'%}" alt="logo"></a>
+          <a href="index.html"><img src="{% static 'assets/img/ghoustlg150.png'%}" alt="logo"></a> 
           <nav class="navbar">
             <ul class="navbar-links">
-              <li class="navbar-dropdown menu-item-children">
-                <a href="#">Home</a>
-                <ul class="sub-menu">
-                  <li><a href="index.html">home 1</a></li>
-                  <li><a href="index-2.html">home 2</a></li>
-                  <li><a href="index-3.html">home 3</a></li>
-                </ul>
+              <li class="navbar-dropdown">
+                <a href="{%url 'index' %}">Home</a>
               </li>
               <li class="navbar-dropdown">
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
               </li>
               <li class="navbar-dropdown menu-item-children">
                 <a href="#">Pages</a>
@@ -210,13 +206,13 @@
 {% endblock %}
 
 
-  <footer style="background-image: url({% static 'assets/img/footer-line.png'%});">
+  <footer style="background-image: url({% static 'assets/img/ghostwlp.png'%});">
     <div class="container">
       <div class="footer-top">
         <div class="row">
           <div class="col-lg-6">
             <div class="logo">
-              <img src="{% static 'assets/img/logo.png'%}" alt="logo">
+              <img src="{% static 'assets/img/ghoustlg150.png'%}" alt="logo">
               <p>Solar energy is radiant light and heat from the Sun that is harnessed using a range of technologies
                 such as solar power to generate electricity, solar thermal energy, and solar architecture.</p>
             </div>
@@ -250,7 +246,7 @@
                 </i></div>
               <div>
                 <span>Phone No:</span>
-                <h6><a href="callto:+1(251)3441354">+1 0109 -1812-347</a></h6>
+                <h6><a href="callto:+998 95 097 00 50">+998 95 097 00 50<br>+998 97 370 37 07</a></h6>
               </div>
             </div>
             <div class="get-in-touch">
@@ -274,7 +270,8 @@
                 </i></div>
               <div>
                 <span>Email Address:</span>
-                <h6><a href="mailto:username@domain.com">username@domain.com</a></h6>
+                <h6><a class="me-3" href="mailto:luxof@proton.me">luxof@proton.me</a></h6>
+                <h6><a class="me-3" href="mailto:lucsov@proton.me">lucsov@proton.me</a></h6>
               </div>
             </div>
             <div class="get-in-touch">
@@ -291,7 +288,7 @@
                   </svg>
                 </i></div>
               <div>
-                <span class="pt-2 pb-0">12/7 new town, 245x Town 1214 Street, United State</span>
+                <span class="pt-2 pb-0">60 Rte d'Arlon, 1150 Rollingergrund-North Belair Luxembourg, Люксембург</span>
               </div>
             </div>
           </div>
@@ -301,7 +298,7 @@
             <h3>Useful Links</h3>
             <div class="boder"></div>
             <ul>
-              <li><i class="fa-solid fa-caret-right"></i><a href="about.html">About Us</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="{% url 'about' %} ">About Us</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="#">Timeline </a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="#">Image Gallery </a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
@@ -351,7 +348,7 @@
               <a href="#"> Terms & Conditions</a>
             </li>
             <li>
-              <a href="about.html">About Us</a>
+              <a href="{% url 'about' %}">About Us</a>
             </li>
           </ul>
         </div>
