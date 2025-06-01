@@ -98,7 +98,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Luxurious+Script&display=swap");
 
 :root {
-    --theme-colour: hsl(0, 0%, 100%);
+    --theme-colour: hsl(0, 0%, 34%);
     --common-colour: #000000;
 }
 
@@ -264,7 +264,7 @@ header .phone a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: -1;
   opacity: 0;
   transition: 1s all;
@@ -1416,7 +1416,7 @@ span#progress-value i {
     transform: rotate(45deg);
 }
 .services:hover a i {
-    background-color: var(--theme-colour);
+    background-color: #f70707;
 }
 /* 15. need-expert */
 .need-expert {
@@ -1460,7 +1460,7 @@ form textarea {
     padding-top: 14px;
 }
 .need-expert h4 {
-    color: #fff;
+    color: #858585;
     font-size: 50px;
     width: 69%;
     font-weight: 800;
@@ -1486,7 +1486,7 @@ form textarea {
 } 
 .phone-number a {
     border-bottom: 1px solid;
-    color: #fff;
+    color: #787878;
     font-size: 34px;
     font-weight: 800;
     display: block;
@@ -1495,7 +1495,7 @@ form textarea {
     color: var(--theme-colour);
 }
 .phone-number span {
-    color: #fff;
+    color: #9f9f9f;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
@@ -1508,7 +1508,7 @@ form textarea {
 .sustainable-section:before {
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
     z-index: -1;
-    background-color: #F8F8F8;
+    background-color: #4b4b4b;
     content: "";
     position: absolute;
     height: 100%;
@@ -1519,7 +1519,7 @@ form textarea {
     font-weight: 800;
     border: 1px solid #fef9f9;
     border-radius: 0;
-    color: #000;
+    color: #000000;
     padding: 0 22px;
     display: flex;
     align-items: center;
@@ -1540,7 +1540,7 @@ form textarea {
 }
 .nav-pills .nav-link.active {
     color: #fff;
-    background-color: #0a8447;
+    background-color: #000000;
     border-radius: 0;
     border: 0;
 }
@@ -1582,7 +1582,7 @@ ul.list-style li {
     padding-bottom: 16px;
     padding-left: 25px;
     font-size: 18px;
-    color: #444444;
+    color: #ffffff;
 }
 .experience ul.list-style {
     padding-bottom: 20px;
@@ -1664,7 +1664,7 @@ ul.list-style li:before {
 }
 .swiper-button i:hover {
     background-color: var(--common-colour);
-    color: #fff;
+    color: #ffffff;
 }
 .swiper-button-next, .swiper-button-prev {
     width: auto;
@@ -1705,7 +1705,7 @@ ul.list-style li:before {
 .project-img:before {
     position: absolute;
     width: 100%;
-    background-color: #00000050;
+    background-color: #ffffff84;
     height: 25%;
     opacity: 0;
     content: "";
@@ -1722,7 +1722,7 @@ ul.list-style li:before {
     position: absolute;
     bottom: 12px;
     right: 12px;
-    background-color: var(--theme-colour);
+    background-color: #060606;
     width: 70px;
     height: 70px;
     display: flex;
@@ -1733,9 +1733,9 @@ ul.list-style li:before {
     padding: 0;
 }
 .project-img > a:hover {
-    color: #fff;
+    color: #ffffff;
     transform: rotate(45deg);
-    background-color: var(--common-colour);
+    background-color: #4c4c4c;
 }
 .project-img > a i {
     display: contents;
@@ -1759,7 +1759,7 @@ ul.list-style li:before {
 .fun-facts {
     display: flex;
     align-items: center;
-    border: 1px solid #D1D1D1;
+    border: 1px solid #ffffff;
     padding: 22px 0;
     margin-left: 40px;
     position: relative;
@@ -1788,7 +1788,7 @@ ul.list-style li:before {
 }
 .fun-facts:hover i {
     color: #fff;
-    background-color: var(--common-colour);
+    background-color: #313131;
 }
 .fun-facts span {
     font-weight: 700;
@@ -1841,7 +1841,7 @@ a.next-slide.nav-active {
 }
 
 .c-slider {
-    background-color: var(--common-colour);
+    background-color: #000000;
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
     padding-bottom: 106px;
 }
@@ -1885,7 +1885,7 @@ a.next-slide.nav-active {
 .blog-img:before {
     width: 100%;
     height: 30%;
-    background-color: var(--common-colour);
+    background-color: #000);
     opacity: 0;
     content: "";
     position: absolute; 
@@ -1996,7 +1996,7 @@ footer:before {
 /* 25. subscribe */
 .subscribe h3{
     font-size: 30px;
-    color: #fff;
+    color: #fff6f6;
     text-transform: uppercase;
     font-family: var(--common-font);
     font-weight: 900;
@@ -2017,7 +2017,7 @@ footer:before {
     height: 56px;
     padding-left: 20px;
     outline: none;
-    background-color: #ffffff;
+    background-color: #282828;
     border-radius: 4px;
     color: #444;
     margin-right: 20px;
@@ -2027,7 +2027,7 @@ footer:before {
     color: #444;
 }
 .footer-top {
-    background-color: var(--common-colour);
+    background-color: #fff;
     z-index: 111;
     position: relative;
     margin-bottom: 100px;
@@ -2097,7 +2097,7 @@ footer:before {
     align-items: center;
 }
 .get-in-touch svg {
-    fill: #ffee02;
+    fill: #fff021;
     height: auto;
 }
 .get-in-touch i {
@@ -4329,7 +4329,7 @@ footer.footer404:before {
 }
 
 footer.footer404 {
-    background-color: #000;
+    background-color: #f7f7f7;
     z-index: 111;
     position: relative;
 }
@@ -4384,13 +4384,13 @@ button.error-button {
 }
 button.error-button:hover {
     background-color: var(--common-colour);
-    color: #fff;
+    color: #000000;
 }
 /*=======================
    79. Preloader
 =======================*/
  .preloader {
-    background-color: var(--theme-colour);
+    background-color: #181818;
     width: 100%;
     height: 100%;
     display: flex;
@@ -4420,12 +4420,12 @@ button.error-button:hover {
   width: 100%;
   text-align: center;
   margin: 35px auto 0;
-  color: #FFF;
+  color: #ffffff;
   font-weight: 600;
   font-size: 14px; 
   letter-spacing: 2px;
   text-transform: uppercase;
-  content: "Loading";
+  content: "Ghosted?!";
   -webkit-transition: none;
   transition: none;
 }
