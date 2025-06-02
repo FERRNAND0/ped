@@ -1320,7 +1320,7 @@ span#progress-value i {
 .count-style {
     width: 220px;
     height: 220px;
-    background-color: #000000;
+    background-color: #6e6e6e;
     opacity: 0.9;
     border-radius: 50%;
     text-align: center;
@@ -1343,12 +1343,12 @@ span#progress-value i {
     position: relative;
 }
 .services:hover i {
-    outline-color: var(--common-colour);
+    outline-color: #000000;
 }
 .services a i {
     width: 60px;
     height: 60px;
-    background-color: #ffffff;
+    background-color: #636363;
     color: #000;
     display: flex;
     align-items: center;    
@@ -1390,10 +1390,10 @@ span#progress-value i {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 5px solid #fff;
-    outline: 3px solid #000000;
+    border: 5px solid #444444;
+    outline: 3px solid #d7d7d7;
     margin-top: -45px;
-    color: hsl(0, 0%, 96%);
+    color: hsl(0, 0%, 100%);
 }
 .services:before {
     content: "";
@@ -1413,13 +1413,13 @@ span#progress-value i {
     color: #fcfcfc;
 }
 .services a:hover {
-    color: var(--theme-colour);
+    color: #ffffff;
 } 
 .services a i:hover {
     transform: rotate(45deg);
 }
 .services:hover a i {
-    background-color: #f70707;
+    background-color: #000000;
 }
 /* 15. need-expert */
 .need-expert {
@@ -1463,7 +1463,7 @@ form textarea {
     padding-top: 14px;
 }
 .need-expert h4 {
-    color: #858585;
+    color: #ffffff;
     font-size: 50px;
     width: 69%;
     font-weight: 800;
@@ -1473,32 +1473,23 @@ form textarea {
     bottom: 10px;
 }
 /* 16. phone-number */
-.phone-number i {
-    width: 75px;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--theme-colour);
-    margin-right: 24px;
-    font-size: 40px;
-}
+
 .phone-number {
     display: flex;
     align-items: center;
 } 
 .phone-number a {
     border-bottom: 1px solid;
-    color: #787878;
+    color: #ffffff;
     font-size: 34px;
     font-weight: 800;
     display: block;
 }
 .phone-number a:hover {
-    color: var(--theme-colour);
+    color: #fff;
 }
 .phone-number span {
-    color: #9f9f9f;
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
@@ -1511,7 +1502,7 @@ form textarea {
 .sustainable-section:before {
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
     z-index: -1;
-    background-color: #4b4b4b;
+    background-image: url(https://giftaway.se/content/files/slideshow/istock-1053320828.jpg);
     content: "";
     position: absolute;
     height: 100%;
@@ -1520,7 +1511,7 @@ form textarea {
 .nav-pills .nav-link {
     font-size: 20px;
     font-weight: 800;
-    border: 1px solid #fef9f9;
+    border: 1px solid #ffffff;
     border-radius: 0;
     color: #000000;
     padding: 0 22px;
@@ -1924,7 +1915,7 @@ a.next-slide.nav-active {
 .blog > a {
     width: 60px;
     height: 60px;
-    background-color: #ECECEC;
+    background-color: #434343;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1944,7 +1935,7 @@ a.next-slide.nav-active {
 }
 .admin h5 {
     padding: 7px;
-    background-color: #bf4141;
+    background-color: #000000;
     padding-left: 35px;
     margin-left: -19px;
     font-size: 18px;
@@ -2030,7 +2021,7 @@ footer:before {
     color: #444;
 }
 .footer-top {
-    background-color: #fff;
+    background-color: #434343;
     z-index: 111;
     position: relative;
     margin-bottom: 100px;
@@ -2053,7 +2044,7 @@ footer:before {
     top: 0;
     width: 16%;
     height: 100%;
-    background-color: #009a4e;
+    background-color: #434343;
     right: 100%;
     z-index: -2;
 }
