@@ -1413,13 +1413,13 @@ span#progress-value i {
     color: #fcfcfc;
 }
 .services a:hover {
-    color: #ffffff;
+    color: #000000;
 } 
 .services a i:hover {
     transform: rotate(45deg);
 }
 .services:hover a i {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 /* 15. need-expert */
 .need-expert {
