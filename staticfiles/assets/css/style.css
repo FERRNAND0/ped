@@ -1650,7 +1650,7 @@ ul.list-style li:before {
 .swiper-button i {
     width: 80px;
     height: 60px;
-    background-color: #2c2c2c;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1683,12 +1683,12 @@ ul.list-style li:before {
     font-weight: 600;
 }
 .projects > a:hover {
-    color: var(--common-colour);
+    color: #ffffff;
 }
 .projects h5 {
     font-size: 20px;
     font-weight: 800;
-    color: var(--common-colour);
+    color: #ffffff;
 }
 .projects img {
     width: 100%;
@@ -2135,13 +2135,13 @@ ul.recent-news li {
 }
 ul.recent-news li a {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: italic;
     margin: 0;
     display: block;
 }
 ul.recent-news li span {
     font-weight: 800;
-    color: var(--common-colour);
+    color: #ffffff;
     font-size: 14px;
     text-transform: uppercase;
     display: block;
@@ -4415,11 +4415,11 @@ button.error-button:hover {
   text-align: center;
   margin: 35px auto 0;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: italic;
   font-size: 14px; 
   letter-spacing: 2px;
   text-transform: uppercase;
-  content: "Ghosted?!";
+  content: "loading...";
   -webkit-transition: none;
   transition: none;
 }
