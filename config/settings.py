@@ -18,7 +18,8 @@ SECRET_KEY = env.str("SECRET_KEY", 'django-insecure-test-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", True)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8000'])
+
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8000', 'localhost'])
 
 # Application definition
 
@@ -29,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'sslserver',
+
 ]
 
 MIDDLEWARE = [
@@ -96,7 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -118,3 +121,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # если используешь 
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SECURE_SSL_REDIRECT = env.bool("SECURE_SSL_REDIRECT", False)
+SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", False)
+CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", False)
