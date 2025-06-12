@@ -111,18 +111,6 @@
           <button class="btn bk">Submit Now</button>
         </form>
       </div>
-      <div class="heading">
-        <h2>What you need to order?</h2>
-      </div>
-      <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-          type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><span>1</span>Project
-          Planning</button>
-        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-          type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span>2</span>Protorype of your Design</button>
-        <button class="nav-link mb-0" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
-          type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><span>3</span>Style which you want</button>
-      </div>
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
           <div class="row align-items-center">
@@ -136,7 +124,7 @@
                 <h3>What can you order in our website</h3>
                 <ul class="list-style">
                   <li>Logo Design</li>
-                  <li>Web Design</li>
+                  <li>Video Editing</li>
                   <li>Graphic Design</li>
                 </ul>
                 <span>Luxov</span>
@@ -193,96 +181,63 @@
   </section>
   <section class="gap no-bottom">
     <div class="container">
-      <div class="heading two">
-        <h2>Latest Projects</h2>
-      </div>
-      
-      <div class="swiper project-slider d-flex flex-wrap justify-content-center">
-        <div style="width: 302px; height: 434px;">
-          <div class="swiper-wrapper">
-              <div class="projects">
-                <div class="project-img">
-                  <figure style="width: 302px; height: 434px;">
-                    <img src="{% static 'assets/img/pstrn1.png' %}" alt="img"  style="max-width: 302px; max-height: 434px;">
-                  </figure>
-                </div>
-                <a href="project-details.html">Poster Koenigsegg Regera</a>
-                <h5>creator = Ferrnando Luxov</h5>
-              </div>
-            </div>
-        </div>
-        <div style="width: 302px; height: 434px;">  
-          <div class="swiper-slide">
-            <div class="projects mt-sm-5">
-              <div class="project-img">
-                <figure>
-                  <img src="{% static 'assets/img/pstrn2.png' %}" alt="img" style="width: 302px; height: 434px;">
-                </figure>
-              </div>
-              <a href="project-details.html">Poster Koenigsegg Regera</a>
-              <h5>by Ferrnando Luxov</h5>
-            </div>
-          </div>
-          </div>
-        <div style="width: 302px; height: 434px;">  
+      <section class="gap">
+  <div class="container">
+    <div class="heading text-center">
+      <h2>Latest Projects</h2>
+    </div>
 
-          <div class="swiper-slide">
-            <div class="projects">
-              <div class="project-img">
-                <figure>
-                  <img src="{% static 'assets/img/pstrn3.png' %}" alt="img" style="width: 302px; height: 434px;">
-                </figure>
-              </div>
-              <a href="project-details.html">Koenigsegg Agera</a>
-              <h5>By Ferrnado Luxov</h5>
-            </div>
+    <!-- Swiper slider -->
+    <div class="swiper project-slider">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <figure>
+              <img src="{% static 'assets/img/pstrn1.png' %}" alt="img">
+            </figure>
+            <a href="project-details.html">Poster Koenigsegg Regera</a>
+            <h5>Creator: Ferrnando Luxov</h5>
           </div>
-          </div>
-        <div style="width: 302px; height: 434px;">  
+        </div>
 
-          <div class="swiper-slide">
-            <div class="projects mt-sm-5">
-              <div class="project-img">
-                <figure>
-                  <img src="{% static 'assets/img/pstrn4.png' %}" alt="img" style="width: 302px; height: 434px;">
-                </figure>
-              </div>
-              <a href="project-details.html">Koegsegg Gemera</a>
-              <h5>By Ferrnado Luxov</h5>
-            </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <figure>
+              <img src="{% static 'assets/img/pstrn2.png' %}" alt="img">
+            </figure>
+            <a href="project-details.html">Poster Koenigsegg Regera</a>
+            <h5>By Ferrnando Luxov</h5>
           </div>
         </div>
-      </div>
-      </div>
-      <div class="row section-fun-facts">
-        <div class="col-lg-3 col-md-4 text-align: center">
-          <div class="fun-facts">
-            <div>
-              <h2><span>MacBook</span></h2>
-              <span>Apple Macbook M4</span>
-            </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <figure>
+              <img src="{% static 'assets/img/pstrn3.png' %}" alt="img">
+            </figure>
+            <a href="project-details.html">Koenigsegg Agera</a>
+            <h5>By Ferrnando Luxov</h5>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 text-align: center">
-          <div class="fun-facts">
-            <div>
-              <h2><span>Asus Rog</span></h2>
-              <span>Rog strix Ryzen 7-4800/Rtx 3060</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 text-align: center">
-          <div class="fun-facts mb-2">
-            <div>
-              <h2>
-                <span>Lenovo</span></h2>
-              <span>Legion Intel 12400HX/Rtx 4060</span>
-            </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <figure>
+              <img src="{% static 'assets/img/pstrn4.png' %}" alt="img">
+            </figure>
+            <a href="project-details.html">Koenigsegg Gemera</a>
+            <h5>By Ferrnando Luxov</h5>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   <section class="section-customer" style="background-image: url('assets/img/customer-background.png');">
     <div class="container">
       <div class="row">
@@ -465,96 +420,76 @@
     </div>
   </section>
   <section class="gap">
-    <div class="container">
-      <div class="heading">
-        <img src="{% static 'assets/img/trew.png '%}" alt="img">
-        <span>Recent Articles</span>
-        <h2>News & Updates</h2>
-      </div>
-      <div class="row">
-        <div class="">
-          <div class="blog">
-            <div class="blog-img">
-              <figure>
-                <img src="{% static 'assets/img/news.png'%}" alt="img">
-              </figure>
-              <div class="admin">
-                <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
-                <div>
-                  <h5>May 27, 2025</h5>
-                  <h6>By Ferrnando Luxov</h6>
-                </div>
-              </div>
-            </div>
-            <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
-            <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="blog">
-            <div class="blog-img">
-              <figure>
-                <img src="{% static 'assets/img/blognew.png'%}" alt="img">
-              </figure>
-              <div class="admin">
-                <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
-                <div>
-                  <h5>May 17, 2025</h5>
-                  <h6>By Ferrnando Luxov</h6>
-                </div>
-              </div>
-            </div>
-            <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
-            <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="blog mb-0">
-            <div class="blog-img">
-              <figure>
-                <img src="{% static 'assets/img/news2.png'%}" alt="img">
-              </figure>
-              <div class="admin">
-                <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
-                <div>
-                  <h5>May 22, 2025</h5>
-                  <h6>By Ferrnando Luxov</h6>
-                </div>
-              </div>
-            </div>
-            <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
-            <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
-          </div>
-        </div>
-        <div class="center">
-          <a href="our-blog.html" class="btn">View All News</a>
-        </div>
-      </div>
+  <div class="container">
+    <div class="heading">
+      <img src="{% static 'assets/img/trew.png '%}" alt="img">
+      <span>Recent Articles</span>
+      <h2>News & Updates</h2>
     </div>
-  </section>
-  <div class="container gap no-top">
-    <div class="swiper clients-slider">
-      <div class="swiper-wrapper">
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog">
+          <div class="blog-img">
+            <figure>
+              <img src="{% static 'assets/img/news.png'%}" alt="img">
+            </figure>
+            <div class="admin">
+              <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
+              <div>
+                <h5>May 27, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
+          <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
         </div>
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog">
+          <div class="blog-img">
+            <figure>
+              <img src="{% static 'assets/img/blognew.png'%}" alt="img">
+            </figure>
+            <div class="admin">
+              <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
+              <div>
+                <h5>May 17, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
+          <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
         </div>
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog mb-0">
+          <div class="blog-img">
+            <figure>
+              <img src="{% static 'assets/img/news2.png'%}" alt="img">
+            </figure>
+            <div class="admin">
+              <img src="{% static 'assets/img/adminavas.png'%}" alt="img">
+              <div>
+                <h5>May 22, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4><a href="blog-details.html">Solar Training Program Series: Why is Remote Energy Focused</a></h4>
+          <a href="blog-details.html"><i class="flaticon-right-up"></i></a>
         </div>
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
-        </div>
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
-        </div>
-        <div class="partner swiper-slide">
-          <img alt="clients-logo" src="https://via.placeholder.com/110x130">
-        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <a href="our-blog.html" class="btn">View All News</a>
       </div>
     </div>
   </div>
+</section>
+
   
 {% endblock %}
