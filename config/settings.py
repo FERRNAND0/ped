@@ -16,7 +16,7 @@ env.read_env(path=BASE_DIR / '.env', override=True)
 SECRET_KEY = env.str("SECRET_KEY", 'django-insecure-test-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", True)
+DEBUG = env.bool("DEBUG", False)
 
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8000', 'localhost'])
