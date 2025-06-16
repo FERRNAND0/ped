@@ -63,40 +63,13 @@
               <li class="navbar-dropdown">
                 <a href="https://luxov.uz/about/">About</a>
               </li>
-              <li class="navbar-dropdown menu-item-children">
-                <a href="#">Pages</a>
-                <ul class="sub-menu">
-                  <li class="sub-menu-item-children"><a href="#">project</a>
-                    <ul class="sub-menu">
-                      <li><a href="our-project.html">our project</a></li>
-                      <li><a href="our-project-2.html">our project 2</a></li>
-                      <li><a href="project-details.html">project details</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="our-history.html">our history</a></li>
-                  <li><a href="pricing-plans.html">pricing plans</a></li>
-                  <li><a href="faq.html">faq</a></li>
+
+                  <li><a href="{% url 'faq' %}">faq</a></li>
                   <li><a href="404.html">404</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a>
                 </ul>
               </li>
-              <li class="navbar-dropdown menu-item-children">
-                <a href="#">Services</a>
-                <ul class="sub-menu">
-                  <li><a href="our-services.html">our services</a></li>
-                  <li><a href="service-details.html">service details</a></li>
-                </ul>
-              </li>
-              <li class="navbar-dropdown menu-item-children">
-                <a href="#">News</a>
-                <ul class="sub-menu">
-                  <li><a href="our-blog.html">our blog</a></li>
-                  <li><a href="blog-details.html">blog details</a></li>
-                </ul>
-              </li>
-              <li class="navbar-dropdown">
-                <a href="contact.html">Contact</a>
-              </li>
-            </ul>
+
           </nav>
           <div class="menu-end">
             <div class="bar-menu">
@@ -136,31 +109,14 @@
             <li><a href="https://luxov.uz/">Main</a></li>
           </ul>
         </li>
-        <li><a href="https://luxov.uz/about/">about</a></li>
-        <li class="menu-item-has-children"><a href="JavaScript:void(0)">pages</a>
-          <ul class="sub-menu">
-            <li><a href="our-project.html">our project</a></li>
-            <li><a href="our-project-2.html">our project 2</a></li>
-            <li><a href="project-details.html">project details</a></li>
-            <li><a href="our-history.html">our history</a></li>
-            <li><a href="pricing-plans.html">pricing plans</a></li>
-            <li><a href="faq.html">faq</a></li>
-            <li><a href="404.html">404</a></li>
+
+        <li><a href="about.html">about</a></li>
+        <li><a href="faq.html">faq</a></li>
+        <li><a href="404.html">404</a></li>
+
           </ul>
-        </li>
-        <li class="menu-item-has-children"><a href="JavaScript:void(0)">service</a>
-          <ul class="sub-menu">
-            <li><a href="our-services.html">our services</a></li>
-            <li><a href="service-details.html">service details</a></li>
-          </ul>
-        </li>
-        <li class="menu-item-has-children"><a href="JavaScript:void(0)">News</a>
-          <ul class="sub-menu">
-            <li><a href="our-blog.html">our blog</a></li>
-            <li><a href="blog-details.html">blog details</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li><a href="{%url 'contact' %}">Contact</a></li>
       </ul>
       <a href="JavaScript:void(0)" id="res-cross"></a>
     </div>
@@ -171,8 +127,10 @@
         <img src="{% static 'assets/img/lgmetl.png'%}" alt="img">
       </figure>
       <h3>Get in touch</h3>
-      <p class="num"><a href="callto:+18880002222">+998-370-37-07</a></p>
-      <p class="adrs">60 Rte d'Arlon, 1150 Rollingergrund-North Belair Luxembourg</p>
+
+      <p class="num"><a href="callto:+998973703707">+998-97-370-37-07</a></p>
+      <p class="adrs">374 William S Canning Blvd, Fall River MA 2721, USA</p>
+      <p class="email"><a href="mailto:lucsov@proton.me">Email</a></p>
       <div class="social-medias">
         <a href="https://www.instagram.com/iucsov/">Instagram</a>
         <a href="https://t.me/lucsov">Telegram</a>

@@ -1,3 +1,8 @@
 from django.db import models
+from django.urls import reverse
 
-# Create your models here.
+
+def get_absolute_url(self):
+    return reverse("blog_post_detail", argss=[self.id])
+
+
