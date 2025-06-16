@@ -26,13 +26,13 @@
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <form class="content-form" id="contact-form" method="post">
+        <form class="content-form"  method="post">
           <h4>Let’s Get in Touch</h4>
           <div class="inputbox">
-            <input type="text" name="Complete_Name" placeholder="Complete Name" required="">
+            <input type="text" name="full_name" placeholder="Complete Name" required="">
           </div>
           <div class="inputbox">
-            <input type="email" name="Email_Address" placeholder="Email Address" required="">
+            <input type="email" name="email" placeholder="Email Address" required="">
           </div>
           <select class="nice-select Advice">
             <option>Select Service</option>
@@ -41,8 +41,9 @@
 
           </select>
           <div class="textareabox">
-            <textarea placeholder="Message"></textarea>
+            <textarea placeholder="Message" name="description"></textarea>
           </div>
+          {% csrf_token %}
           <button type="submit" class="btn bk">Submit Now</button>
         </form>
       </div>

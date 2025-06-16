@@ -22,6 +22,8 @@ DEBUG = env.bool("DEBUG", False)
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8000', 'localhost'])
 
 # Application definition
+BOT_TOKEN = env.str("BOT_TOKEN", 'django-insecure-test-key')
+CHAT_ID = env.str("CHAT_ID", 'django-insecure-test-key')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,6 +32,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
+    'blog',
+
     # 'sslserver',
 
 ]
