@@ -1,0 +1,14 @@
+# urls.py
+from django.http import HttpResponse
+
+def robots_txt(request):
+    return HttpResponse(
+        "User-agent: *\n"
+        "Disallow:\n"
+        "Sitemap: https://luxov.uz/sitemap.xml\n",
+        content_type="text/plain"
+    )
+
+urlpatterns += [
+    path("robots.txt", robots_txt, name="robots_txt"),
+]

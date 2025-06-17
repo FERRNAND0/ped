@@ -183,6 +183,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://www.donationalerts.com/r/lucsov">Donate</a>
       </div>
     </div>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Блоки SEO -->
+    <title>{% block title %}Luxov — Премиальная продукция в Узбекистане{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Luxov.uz — магазин премиальной продукции. Качество, стиль, надежность. Покупайте лучшее в Узбекистане.{% endblock %}">
+    <meta name="keywords" content="Luxov, премиум, Узбекистан, купить, брендовая продукция, магазин, стиль, качество">
+    <meta name="author" content="Luxov Team">
+
+    <!-- Канонический URL -->
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="{% block og_title %}Luxov — Премиальные товары в Узбекистане{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Интернет-магазин Luxov.uz — ваш источник высококачественных товаров с доставкой по Узбекистану.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ STATIC_URL }}images/og-default.jpg{% endblock %}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ request.build_absolute_uri }}">
+    <meta name="twitter:title" content="{% block twitter_title %}Luxov — Элитная продукция{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Товары премиум-класса по доступным ценам. Быстрая доставка по всей стране.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ STATIC_URL }}images/twitter-default.jpg{% endblock %}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Luxov",
+      "url": "https://luxov.uz",
+      "logo": "https://luxov.uz/static/images/logo.png",
+      "description": "Luxov — магазин премиальной продукции в Узбекистане.",
+      "sameAs": [
+        "https://t.me/Iuxov", 
+        "https://instagram.com/Iucsov"
+      ]
+    }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <!-- Контент страницы -->
+    {% endblock %}
   </header>
 
 {% block content %}

@@ -34,10 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'blog',
+    'django.contrib.sitemaps',
+]
+
 
     # 'sslserver',
 
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
