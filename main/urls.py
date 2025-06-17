@@ -1,14 +1,11 @@
-from django.contrib import admin
-from django.urls import path, include
-from django.contrib.sitemaps.views import sitemap
-from main.sitemaps import StaticViewSitemap
-
-sitemaps = {
-    'static': StaticViewSitemap(),  # ✅ экземпляр
-}
+from django.urls import path
+from .views import index, about, contact, blog, faq
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact'),
+    path('blog/', blog, name='blog'),
+    path('faq/', faq, name='faq'),
+
 ]
