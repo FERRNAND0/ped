@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'blog',
-    'django.contrib.sitemaps',
+    # 'django.contrib.sitemaps',
 ]
 
 
