@@ -109,10 +109,11 @@
             <div class="subscribe">
               <h3>Subscribe Newsletter</h3>
               <p>Stay up to date with our latest news and designs.</p>
-              <form method="post" id="subscribe-form" class="get-subscribee">
+              <form method="POST" action="">
                 {% csrf_token %}
-                <input type="email" name="Email_Address" placeholder="Enter your email here" required>
-                <button type="submit" class="btn bk">Subscribe</button>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button class="btn bk" type="submit">Submit Now</button>
               </form>
             </div>
           </div>
