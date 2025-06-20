@@ -2844,11 +2844,11 @@ ul.social-media {
     transform: translateY(-50%);
     left: 13px;
     background-color: white;
-    background-color: #feda46;
+    background-color: #000000;
 }
 .accordion-item.active .title {
     color: #000;
-    border-color: #feda46;
+    border-color: #000000;
 }
 .accordion-item .icon:before, .accordion-item .icon:after {
     content: "";
@@ -2903,14 +2903,14 @@ ul.social-media {
     color: black;
 }
 .accordion-item.active .icon {
-    background-color: #009a4e;
+    background-color: #ffffff;
 }
 .accordion-item {
     border: 1px solid #999999;
-    background-color: #fff;
+    background-color: #000000;
 }
 .accordion-item.active {
-    border: 1px solid #feda46;
+    border: 1px solid #000000;
 }
 .accordion-item:last-of-type {
     border-bottom-right-radius: 0;
