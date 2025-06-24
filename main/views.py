@@ -36,10 +36,10 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            send_telegram_message(f"New contact form submission:\n\n"
-                                                               f"Full Name: {form.cleaned_data['full_name']}\n"
-                                                               f"Email: {form.cleaned_data['email']}\n"
-                                                               f"Description: {form.cleaned_data['description']}")
+            send_telegram_message(f"New contact form submission:\n\n" \
+                                f"Full Name: {form.cleaned_data['full_name']}\n" \
+                                f"Email: {form.cleaned_data['email']}\n" \
+                                f"Description: {form.cleaned_data['description']}")
 
             return render(request, 'main/contact.html', {'form': form, 'success': True})
     else:
