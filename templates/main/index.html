@@ -3,80 +3,75 @@
 
 {% block content %}
 
-  <section class="swiper hero-one-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide hero-section-one">
-        <div class="container">
-          <div class="row align-items-center">
-              <div class="col-lg-6">
-                <div class="hero-text mt-5 pt-5">
-                  <h1>Best Platform</h1>
-                  <div class="text">
-                    <p>Where you can order your own design!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="hero-img">
-                </div>
+<!-- Working Version -->
+<section class="swiper hero-one-slider">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide hero-section-one">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-text mt-5 pt-5">
+              <h1 style="color: #ffffff;">Best Platform</h1> <!-- Added inline style for visibility -->
+              <div class="text">
+                <p style="color: #ffffff;">Where you can order your own design!</p>
               </div>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img">
+              <!-- Optional: Add a placeholder image if needed -->
+              <!-- <img src="placeholder.jpg" alt="Hero Image"> -->
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-section-one swiper-slide"; height: 400px;">
+    </div>
 
-        <div class="container">
-          <div class="col-lg-12 ">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <div class="hero-text mt-5 pt-5">
-                  <h1>Get your first Logo for 50% discount!</h1>
-                  <div class="text">
-                    <p>Just order your first logo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="hero-img">
-                </div>
+    <!-- Slide 2 -->
+    <div class="swiper-slide hero-section-one" style="height: 400px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-text mt-5 pt-5">
+              <h1>Get your first Logo for 50% discount!</h1>
+              <div class="text">
+                <p>Just order your first logo</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-              <div class="col-lg-6">
-                <div class="hero-img">
-                  <img src="{% static 'assets/img/hero-img.png' %}" alt="img">
-                </div>
-              </div>
+          <div class="col-lg-6">
+            <div class="hero-img">
+              <img src="{% static 'assets/img/hero-img.png' %}" alt="promo offer">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="gap">
-    <div class="container">
-      <div class="heading">
-        <img src="{% static 'assets/img/lgmetl.png'%}" alt="img">
-        <h2>Welcome to Luxov Design</h2>
-      </div>
-      <div class="row">
-        <div>
-            <div style="text-align: center;padding: 25px;word-wrap: break-word;">
-              <h3>We are a team passionate about visual art.</h3>
-            <p>Our studio specializes in graphic design, logo creation, and professional video editing.
-              <br> For over 5 years, we've been helping brands become recognizable and turning ideas into visual masterpieces.
-              <br> During this time, we've completed dozens of successful projects—each crafted with attention to detail,
-              <br> a refined sense of style, and deep respect for our clients’ vision.</p>
-            </div>
-            <figure>
-            </figure>
-            <div class="director-renewable">
-            </div>
+  </div>
+</section>
+
+<section class="gap">
+  <div class="container">
+    <div class="heading">
+      <img src="{% static 'assets/img/lgmetl.png' %}" alt="Luxov Design Logo">
+      <h2>Welcome to Luxov Design</h2>
+    </div>
+    <div class="row">
+      <div style="width: 100%;">
+        <div style="text-align: center; padding: 25px; word-wrap: break-word;">
+          <h3>We are a team passionate about visual art.</h3>
+          <p>
+            Our studio specializes in graphic design, logo creation, and professional video editing.<br>
+            For over 5 years, we've been helping brands become recognizable and turning ideas into visual masterpieces.<br>
+            During this time, we've completed dozens of successful projects—each crafted with attention to detail,<br>
+            a refined sense of style, and deep respect for our clients' vision.
+          </p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   <section class="gap sustainable-section">
     <div class="container">
       <div class="need-expert" style="background-image: url ( static 'assets/img/need-expert.jpg');">
