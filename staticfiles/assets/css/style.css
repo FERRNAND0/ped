@@ -98,7 +98,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Luxurious+Script&display=swap");
 
 :root {
-    --theme-colour: hsl(0, 0%, 34%);
+    --theme-colour: rgb(124, 124, 124);
     --common-colour: #000000;
 }
 

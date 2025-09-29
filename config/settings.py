@@ -34,7 +34,7 @@ LOGGING = {
 
 
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8000', 'localhost'])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['127.0.0.1','127.0.0.1:8080', 'localhost'])
 
 # Application definition
 BOT_TOKEN = env.str("BOT_TOKEN", 'django-insecure-test-key')
