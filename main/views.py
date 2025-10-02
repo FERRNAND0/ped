@@ -4,6 +4,7 @@ import requests
 from django.conf import settings
 
 
+
 TEXT = 'Привет! Это сообщение от Python 🐍'
 
 def send_telegram_message(text):
@@ -49,5 +50,5 @@ def contact(request):
 def faq(request):
     return render(request, 'main/faq.html')
 
-
-
+def luxov(request):
+    return render(request, 'main/luxov.html')
