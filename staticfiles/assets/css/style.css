@@ -105,7 +105,7 @@
 body {
   font-family: "Bodoni Moda SC", sans-serif;
   overflow-x: hidden;
-  background-image: url("/static/assets/img/eee");
+  background-image: url("/static/assets/img/new2k.png");
   background-color: rgba(0, 0, 0, 0.2);
   background-attachment: fixed;
   background-size: cover; /* Add this */
