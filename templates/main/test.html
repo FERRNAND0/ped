@@ -1,0 +1,988 @@
+{% extends "base.html"%} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<style>
+  /* ===== KOENIGSEGG STYLE OVERRIDES ===== */
+  :root {
+    --theme-colour: #ffffff;
+    --common-colour: #000000;
+    --accent-glow: rgba(255, 255, 255, 0.3);
+  }
+
+  body {
+    font-family: "Bodoni Moda SC", serif;
+    background: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  /* ===== MODERN GRID SYSTEM ===== */
+  .grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .grid-col-6 {
+    width: 50%;
+  }
+  .grid-col-4 {
+    width: 33.333%;
+  }
+  .grid-col-l-4 {
+    width: 33.333%;
+  }
+  .grid-col-l-6 {
+    width: 50%;
+  }
+
+  [class*="grid-col"] {
+    padding: 0 15px;
+  }
+
+  /* ===== ENHANCED HERO SECTION ===== */
+  .swiper.hero-one-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-section-one {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+
+  .hero-section-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .hero-text .text p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .hero-img img {
+    transform: scale(1.1);
+    transition: transform 8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .hero-section-one:hover .hero-img img {
+    transform: scale(1);
+  }
+
+  /* ===== ENHANCED SECTIONS ===== */
+  .gap {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  .section-transition {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .section-transition.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .heading img {
+    margin-bottom: 2rem;
+    filter: brightness(0) invert(1);
+    transition: transform 0.6s ease;
+  }
+
+  .heading:hover img {
+    transform: scale(1.1);
+  }
+
+  .heading h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+  }
+
+  .heading h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--theme-colour);
+  }
+
+  /* ===== MODERN CARDS ===== */
+  .project-card,
+  .blog,
+  .services {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+  }
+
+  .project-card::before,
+  .blog::before,
+  .services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .project-card:hover::before,
+  .blog:hover::before,
+  .services:hover::before {
+    left: 100%;
+  }
+
+  .project-card:hover,
+  .blog:hover,
+  .services:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .project-card figure,
+  .blog figure {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card figure img,
+  .blog figure img {
+    width: 100%;
+    transition: transform 0.6s ease;
+  }
+
+  .project-card:hover figure img,
+  .blog:hover figure img {
+    transform: scale(1.1);
+  }
+
+  /* ===== ENHANCED BUTTONS ===== */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 35px;
+    background: transparent;
+    border: 1px solid var(--theme-colour);
+    color: var(--theme-colour);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .btn:hover::before {
+    left: 100%;
+  }
+
+  .btn:hover {
+    background: var(--theme-colour);
+    color: var(--common-colour);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--accent-glow);
+  }
+
+  .btn.bk {
+    background: var(--theme-colour);
+    color: var(--common-colour);
+  }
+
+  .btn.bk:hover {
+    background: transparent;
+    color: var(--theme-colour);
+  }
+
+  /* ===== MODERN FORM STYLES ===== */
+  .need-expert {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .need-expert::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .inputbox,
+  .textareabox {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .inputbox input,
+  .textareabox textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--theme-colour);
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .inputbox input:focus,
+  .textareabox textarea:focus {
+    outline: none;
+    border-color: var(--theme-colour);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  /* ===== ENHANCED TESTIMONIALS ===== */
+  .section-customer {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+
+  .c-slider {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .nav-c-slider a.next-slide {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .nav-c-slider a.next-slide.nav-active {
+    border-color: var(--theme-colour);
+    transform: scale(1.1);
+  }
+
+  .nav-c-slider a.next-slide:hover {
+    border-color: var(--theme-colour);
+    transform: scale(1.05);
+  }
+
+  /* ===== CUSTOM CURSOR ===== */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--theme-colour);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease;
+  }
+
+  .cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s ease;
+  }
+
+  /* ===== LOADING ANIMATIONS ===== */
+  .loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--theme-colour), #ccc);
+    z-index: 9999;
+    transition: width 0.3s ease;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(80px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    animation: fadeInLeft 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .heading h2 {
+      font-size: 2.5rem;
+    }
+
+    .grid-col-6,
+    .grid-col-4,
+    .grid-col-l-4,
+    .grid-col-l-6 {
+      width: 100%;
+    }
+
+    .project-card:hover,
+    .blog:hover,
+    .services:hover {
+      transform: translateY(-8px) scale(1.01);
+    }
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme-colour);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+  }
+</style>
+
+<!-- Enhanced Hero Section -->
+<section class="swiper hero-one-slider">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div
+      class="swiper-slide hero-section-one"
+      style="background-image: url('{% static 'assets/img/hero-bg.jpg' %}')"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-text mt-5 pt-5">
+              <h1>Premium Design Platform</h1>
+              <div class="text">
+                <p>Where creativity meets exceptional design quality</p>
+              </div>
+              <a href="#services" class="btn">Explore Services</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img">
+              <img
+                src="{% static 'assets/img/hero-visual.png' %}"
+                alt="Design Visual"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div
+      class="swiper-slide hero-section-one"
+      style="
+        background-image: url('{% static 'assets/img/hero-bg-2.jpg' %}');
+        height: 100vh;
+      "
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-text mt-5 pt-5">
+              <h1>First Project 50% OFF</h1>
+              <div class="text">
+                <p>
+                  Launch your brand with premium design at special introductory
+                  price
+                </p>
+              </div>
+              <a href="#order" class="btn bk">Start Project</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img">
+              <img
+                src="{% static 'assets/img/hero-img.png' %}"
+                alt="Special Offer"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced About Section -->
+<section class="gap section-transition">
+  <div class="container">
+    <div class="heading fade-in-up">
+      <img
+        src="{% static 'assets/img/lgmetl.png' %}"
+        alt="Luxov Design Logo"
+        width="120"
+      />
+      <h2>Welcome to Luxov Design</h2>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div
+          class="text-center px-4 py-5 fade-in-up"
+          style="animation-delay: 0.2s"
+        >
+          <h3 class="mb-4">We are passionate about visual excellence</h3>
+          <p class="lead">
+            Our studio specializes in premium graphic design, logo creation, and
+            professional video editing.<br />
+            For over 5 years, we've been transforming brands into visual
+            masterpieces with meticulous attention<br />
+            to detail and deep respect for our clients' vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Services Section -->
+<section class="gap sustainable-section section-transition">
+  <div class="container">
+    <div class="need-expert">
+      <div class="fade-in-left">
+        <h4>Need Expert Design Advice?</h4>
+        <div class="phone-number mt-4">
+          <div>
+            <span>Get in touch</span>
+            <a href="callto:+998950970050">+998 95 097 00 50</a>
+          </div>
+        </div>
+      </div>
+      <form class="fade-in-left" style="animation-delay: 0.3s">
+        <div class="inputbox">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        <div class="textareabox">
+          <textarea
+            placeholder="Tell us about your project"
+            required
+          ></textarea>
+        </div>
+        <button class="btn bk">Get Free Consultation</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="tab-img">
+              <img
+                src="{% static 'assets/img/regerpstr.png' %}"
+                alt="Our Services"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="research-analysis fade-in-up">
+              <h3>Premium Design Services</h3>
+              <ul class="list-style">
+                <li>Logo & Brand Identity Design</li>
+                <li>Professional Video Editing</li>
+                <li>Graphic Design & Visual Content</li>
+                <li>Social Media Graphics</li>
+                <li>Web Design Elements</li>
+              </ul>
+              <span>Luxov</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Projects Section -->
+<section class="gap no-bottom section-transition">
+  <div class="container">
+    <section class="gap">
+      <div class="container">
+        <div class="heading text-center fade-in-up">
+          <h2>Featured Projects</h2>
+          <p class="mt-3">Showcasing our latest design excellence</p>
+        </div>
+
+        <div class="swiper project-slider">
+          <div class="swiper-wrapper">
+            <!-- Project Slides -->
+            <div class="swiper-slide">
+              <div class="project-card">
+                <figure>
+                  <img
+                    src="{% static 'assets/img/pstrn1.png' %}"
+                    alt="Koenigsegg Regera Poster"
+                  />
+                </figure>
+                <a
+                  href="https://www.instagram.com/reel/DLPP0uEIZEQ/"
+                  class="project-title"
+                  >Koenigsegg Regera Poster</a
+                >
+                <h5>Designer: Ferrnando Luxov</h5>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-card">
+                <figure>
+                  <img
+                    src="{% static 'assets/img/pstrn2.png' %}"
+                    alt="Koenigsegg Regera Design"
+                  />
+                </figure>
+                <a
+                  href="https://www.instagram.com/reel/DLPQSdeI4tz/"
+                  class="project-title"
+                  >Koenigsegg Regera Design</a
+                >
+                <h5>By Ferrnando Luxov</h5>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-card">
+                <figure>
+                  <img
+                    src="{% static 'assets/img/pstrn3.png' %}"
+                    alt="Koenigsegg Agera"
+                  />
+                </figure>
+                <a
+                  href="https://www.instagram.com/reel/DLPMiZrIl0T/"
+                  class="project-title"
+                  >Koenigsegg Agera</a
+                >
+                <h5>By Ferrnando Luxov</h5>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-card">
+                <figure>
+                  <img
+                    src="{% static 'assets/img/pstrn4.png' %}"
+                    alt="Koenigsegg Gemera"
+                  />
+                </figure>
+                <a
+                  href="https://www.instagram.com/reel/DLPLhwpoWH3/"
+                  class="project-title"
+                  >Koenigsegg Gemera</a
+                >
+                <h5>By Ferrnando Luxov</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- Enhanced Testimonials Section -->
+<section
+  class="section-customer gap section-transition"
+  style="background: linear-gradient(135deg, #000 0%, #1a1a1a 100%)"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="heading two fade-in-left">
+          <img
+            src="{% static 'assets/img/preloader.png' %}"
+            alt="Testimonials"
+            width="40"
+          />
+          <span>Client Testimonials</span>
+          <h2>What Our Clients Say</h2>
+        </div>
+
+        <div class="nav-c-slider fade-in-left" style="animation-delay: 0.2s">
+          <!-- Navigation slides -->
+          <a
+            class="next-slide nav-active"
+            href="JavaScript:void(0)"
+            data-slide="1"
+          >
+            <img src="{% static 'assets/img/lgstart.png' %}" alt="Client" />
+          </a>
+          <a class="next-slide" href="JavaScript:void(0)" data-slide="2">
+            <img src="{% static 'assets/img/lgcontent.png' %}" alt="Client" />
+          </a>
+          <a class="next-slide" href="JavaScript:void(0)" data-slide="3">
+            <img src="{% static 'assets/img/lgbloger.png' %}" alt="Client" />
+          </a>
+        </div>
+
+        <div class="customer fade-in-left" style="animation-delay: 0.3s">
+          <h5>100% Client Satisfaction</h5>
+          <ul class="star">
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i></li>
+            <li><i class="fa-solid fa-star"></i></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="c-slider fade-in-up">
+          <!-- Testimonial slides -->
+          <div>
+            <img src="{% static 'assets/img/lgn5.png' %}" alt="Max L." />
+            <p>
+              "Exceptional design quality! The social media graphics for our
+              product launch were perfectly aligned with our brand and audience
+              engagement skyrocketed."
+            </p>
+            <ul>
+              <li><h3>Max L.</h3></li>
+              <li><h5>Startup Founder</h5></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Blog Section -->
+<section class="gap section-transition">
+  <div class="container">
+    <div class="heading fade-in-up">
+      <span>Design Insights</span>
+      <h2>Latest Updates</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog fade-in-up">
+          <div class="blog-img">
+            <figure>
+              <img
+                src="{% static 'assets/img/newsn1.png' %}"
+                alt="Koenigsegg Agera RS Video"
+              />
+            </figure>
+            <div class="admin">
+              <img
+                src="{% static 'assets/img/adminavas.png' %}"
+                alt="Ferrnando Luxov"
+              />
+              <div>
+                <h5>May 27, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4>
+            <a href="https://www.instagram.com/reel/DJcvrrDJDjv/"
+              >Koenigsegg Agera RS Video Edit</a
+            >
+          </h4>
+          <a href="https://www.instagram.com/reel/DJcvrrDJDjv/"
+            ><i class="flaticon-right-up"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog fade-in-up" style="animation-delay: 0.2s">
+          <div class="blog-img">
+            <figure>
+              <img
+                src="{% static 'assets/img/newsn2.png' %}"
+                alt="Ghosted Inscription"
+              />
+            </figure>
+            <div class="admin">
+              <img
+                src="{% static 'assets/img/adminavas.png' %}"
+                alt="Ferrnando Luxov"
+              />
+              <div>
+                <h5>May 17, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4>
+            <a href="https://www.instagram.com/p/DI3HXURN71h/"
+              >Ghosted Inscription Poster</a
+            >
+          </h4>
+          <a href="https://www.instagram.com/p/DI3HXURN71h/"
+            ><i class="flaticon-right-up"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog fade-in-up" style="animation-delay: 0.3s">
+          <div class="blog-img">
+            <figure>
+              <img
+                src="{% static 'assets/img/newsn3.png' %}"
+                alt="Koenigsegg Regera"
+              />
+            </figure>
+            <div class="admin">
+              <img
+                src="{% static 'assets/img/adminavas.png' %}"
+                alt="Ferrnando Luxov"
+              />
+              <div>
+                <h5>May 22, 2025</h5>
+                <h6>By Ferrnando Luxov</h6>
+              </div>
+            </div>
+          </div>
+          <h4>
+            <a href="https://www.instagram.com/p/DILyAk8Nosh/"
+              >Koenigsegg Regera Poster</a
+            >
+          </h4>
+          <a href="https://www.instagram.com/p/DILyAk8Nosh/"
+            ><i class="flaticon-right-up"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Enhanced JavaScript for Koenigsegg-style effects
+  document.addEventListener("DOMContentLoaded", function () {
+    // Scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".section-transition").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Custom cursor
+    const cursor = document.createElement("div");
+    const follower = document.createElement("div");
+    cursor.className = "custom-cursor";
+    follower.className = "cursor-follower";
+    document.body.appendChild(cursor);
+    document.body.appendChild(follower);
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+
+      setTimeout(() => {
+        follower.style.left = e.clientX + "px";
+        follower.style.top = e.clientY + "px";
+      }, 100);
+    });
+
+    // Hide cursor on mobile
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      cursor.style.display = "none";
+      follower.style.display = "none";
+    }
+
+    // Loading animation
+    const loadingBar = document.createElement("div");
+    loadingBar.className = "loading-bar";
+    document.body.appendChild(loadingBar);
+
+    setTimeout(() => {
+      loadingBar.style.width = "100%";
+      setTimeout(() => {
+        loadingBar.style.opacity = "0";
+        setTimeout(() => {
+          loadingBar.remove();
+        }, 300);
+      }, 300);
+    }, 100);
+
+    // Add loaded class for CSS animations
+    document.body.classList.add("loaded");
+  });
+
+  // Parallax effect for hero sections
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+    const heroSections = document.querySelectorAll(".hero-section-one");
+
+    heroSections.forEach((section) => {
+      const speed = 0.5;
+      section.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  });
+</script>
+{% endblock %}

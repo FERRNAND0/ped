@@ -1,21 +1,32 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-
-<!-- Подключаем стили и скрипты для этой страницы -->
 <link rel="stylesheet" href="{% static 'assets/css/luxov.css' %}" />
+<!-- Подключение Swiper -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{% static 'assets/js/luxov.js' %}"></script>
 
-<!-- Hero Section -->
+<!-- Hero Slider -->
 <section class="swiper hero-one-slider">
   <div class="swiper-wrapper">
     <!-- Slide 1 -->
-    <div
-      class="swiper-slide hero-section-one"
-      style="
-        background-image: url(/static/assets/img/new2k.png);
-        background-size: cover;
-        background-attachment: fixed;
-      "
-    >
+    <div class="swiper-slide hero-section-one">
+      <!-- Фоновое изображение -->
+      <div
+        class="slide-bg-image"
+        style="background-image: url('{% static 'assets/img/new2k.png' %}')"
+      ></div>
+      <!-- Видео, которое проигрывается при наведении -->
+      <video class="slide-video" loop muted preload="none">
+        <!-- Укажите путь к вашему видеофайлу -->
+        <source
+          src="{% static 'assets/video/your-video-1.mp4' %}"
+          type="video/mp4"
+        />
+      </video>
+      <!-- Контент слайда -->
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -24,16 +35,7 @@
               <div class="text">
                 <p>Where creativity meets exceptional design quality</p>
               </div>
-              <a href="#services" class="btn">Explore Services</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hero-img">
-              <img
-                src="{% static 'assets/img/hero-visual.png' %}"
-                alt="Design Visual"
-                class="img-fluid"
-              />
+              <a href="#services" class="lux-btn">Explore Services</a>
             </div>
           </div>
         </div>
@@ -41,14 +43,14 @@
     </div>
 
     <!-- Slide 2 -->
-    <div
-      class="swiper-slide hero-section-one"
-      style="
-        background-image: url('{% static 'assets/img/hero-bg-2.jpg' %}');
-        background-size: cover;
-        background-attachment: fixed;
-      "
-    >
+    <div class="swiper-slide hero-section-one">
+      <div
+        class="slide-bg-image"
+        style="background-image: url('{% static 'assets/img/hero-bg-2.jpg' %}')"
+      ></div>
+      <video class="slide-video" loop muted preload="none">
+        <source src="/static/assets/video/urbn.mp4" type="video/mp4" />
+      </video>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -60,22 +62,18 @@
                   price
                 </p>
               </div>
-              <a href="#order" class="btn bk">Start Project</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hero-img">
-              <img
-                src="{% static 'assets/img/hero-img.png' %}"
-                alt="Special Offer"
-                class="img-fluid"
-              />
+              <a href="#order" class="lux-btn">Start Project</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Навигация (стрелки и пагинация) -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
 </section>
 
 <!-- About -->
@@ -137,7 +135,7 @@
             required
           ></textarea>
         </div>
-        <button class="btn bk">Get Free Consultation</button>
+        <button class="lux-btn">Get Free Consultation</button>
       </form>
     </div>
   </div>

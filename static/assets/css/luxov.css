@@ -2,13 +2,46 @@
   --theme-colour: #ffffff;
   --common-colour: #000000;
   --accent-glow: rgba(255, 255, 255, 0.3);
+  --black: #000;
+  --white: #fff;
+  --gray: #555;
+  --gray-light: #aaa;
 }
 
+/* Шрифт из luxov2 */
 body {
-  font-family: "Bodoni Moda SC", serif;
+  font-family: Arial, sans-serif;
   background: #000;
   color: #fff;
   overflow-x: hidden;
+}
+
+/* Стили кнопок из luxov2 */
+.lux-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 2px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin: 5px;
+  border-radius: 0;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  will-change: transform;
+  text-decoration: none;
+  text-align: center;
+}
+.lux-btn:hover {
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
 }
 
 /* Hero */
@@ -40,8 +73,8 @@ body {
   transform: scale(1);
 }
 
-/* Buttons */
-.btn {
+/* Убрал старые стили кнопок .btn */
+/* .btn {
   display: inline-flex;
   align-items: center;
   padding: 14px 30px;
@@ -60,7 +93,7 @@ body {
 .btn.bk {
   background: var(--theme-colour);
   color: var(--common-colour);
-}
+} */
 
 /* Sections */
 .gap {
@@ -79,15 +112,15 @@ body {
 
 /* Cards */
 .project-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Testimonials */
@@ -97,7 +130,7 @@ body {
   padding: 80px 0;
 }
 .c-slider {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 10px;
 }
@@ -116,131 +149,43 @@ body {
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
 }
-:root {
-  --theme-colour: #ffffff;
-  --common-colour: #000000;
-  --accent-glow: rgba(255, 255, 255, 0.3);
-}
 
-body {
-  font-family: "Bodoni Moda SC", serif;
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Hero */
-.swiper.hero-one-slider {
+.hero-section-one {
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
-.hero-section-one {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+
+.slide-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-.hero-text h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  background: linear-gradient(45deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-img img {
-  transform: scale(1.1);
-  transition: transform 8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.hero-section-one:hover .hero-img img {
-  transform: scale(1);
+  transition: opacity 0.5s ease;
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 30px;
-  border: 1px solid var(--theme-colour);
-  color: var(--theme-colour);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  background: var(--theme-colour);
-  color: var(--common-colour);
-  box-shadow: 0 10px 25px var(--accent-glow);
-  transform: translateY(-3px);
-}
-.btn.bk {
-  background: var(--theme-colour);
-  color: var(--common-colour);
-}
-
-/* Sections */
-.gap {
-  padding: 100px 0;
-  position: relative;
-}
-.section-transition {
+.slide-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  transform: translateY(80px);
-  transition: all 1s ease;
+  transition: opacity 0.5s ease;
 }
-.section-transition.in-view {
+
+.hero-section-one:hover .slide-bg-image {
+  opacity: 0;
+}
+
+.hero-section-one:hover .slide-video {
   opacity: 1;
-  transform: translateY(0);
-}
-
-/* Cards */
-.project-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.3);
-}
-
-/* Testimonials */
-.section-customer {
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-  color: #fff;
-  padding: 80px 0;
-}
-.c-slider {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-/* Custom cursor */
-.custom-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--theme-colour);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-}
-.cursor-follower {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
 }
