@@ -112,12 +112,14 @@ body {
   background-position: center; /* Change from 'right' */
   background-repeat: no-repeat; /* Add this */
 }
-@media screen and (max-width: 480px) {
+@media (max-width: 768px) {
   body {
-    background-image: url("../img/phonewalp.png");
+    background-image: url("/static/assets/img/phonewalp.png");
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 }
-
 section {
   background-repeat: no-repeat;
   background-size: cover;
