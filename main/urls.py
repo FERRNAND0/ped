@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import index, about, contact, faq, luxov
+from . import views
 
 urlpatterns = [
     path('', index, name='index'),

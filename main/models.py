@@ -20,3 +20,9 @@ class Inform(models.Model):
     tel1 = models.CharField(max_length=13)
     description = models.TextField()
     telegram = models.URLField()
+
+class Index(models.Model):
+    email = models.EmailField()
+    is_checked = models.BooleanField(default=False)
+    crated_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

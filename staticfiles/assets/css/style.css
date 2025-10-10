@@ -4281,13 +4281,13 @@ button.error-button:hover {
   top: 50%;
   margin-left: -40px;
   margin-top: -38px;
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-animation: fa-spin 10s infinite linear;
   animation: fa-spin 10s infinite linear;
-  background-image: url(../img/chromelg68.png);
+  background-image: url(../img/chromelg100.png);
   background-size: cover;
   background-attachment: fixed;
   content: "";

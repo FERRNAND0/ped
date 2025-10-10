@@ -7,11 +7,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% block title %}Luxov — Premium Design orders in Uzbekistan{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}Luxov.uz — магазин премиальной продукции. Качество, стиль, надежность. Покупайте лучшее в Узбекистане.{% endblock %}">
-  <meta name="keywords" content="Luxov, премиум, Узбекистан, купить, брендовая продукция, магазин, стиль, качество">
+  <title>{% block title %}Luxov — Premium Design{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Luxov.uz — Order Design, Editing video and Logo Creation{% endblock %}">
+  <meta name="keywords" content="Luxov, Lucsov, Lucs, Ghosted, Ghostov, Lux, LXV, lxv, Premium, Luxo, Lu, Lucso, Design, Premium Design, Order Design, Монтаж Видео, Обработка Фото, лого, logo, logo design, web design, photoshop">
   <meta name="author" content="Luxov Team">
+  <meta name="image" src="/staticfiles/assets/img/pstrn3.png">
   <link rel="icon" href="{% static 'assets/img/ficon.png'%}">
+
   
   
 
@@ -36,15 +38,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ request.build_absolute_uri }}">
-  <meta property="og:title" content="{% block og_title %}Luxov — Премиальные товары в Узбекистане{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}Интернет-магазин Luxov.uz — ваш источник высококачественных товаров с доставкой по Узбекистану.{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}Luxov Premium Design{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Luxov.uz ur chance to join an elite{% endblock %}">
   <meta property="og:image" content="{% block og_image %}{% static 'images/og-default.jpg' %}{% endblock %}">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="{{ request.build_absolute_uri }}">
-  <meta name="twitter:title" content="{% block twitter_title %}Luxov — Элитная продукция{% endblock %}">
-  <meta name="twitter:description" content="{% block twitter_description %}Товары премиум-класса по доступным ценам. Быстрая доставка по всей стране.{% endblock %}">
+  <meta name="twitter:title" content="{% block twitter_title %}Luxov - Premium Design{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}Order your own design{% endblock %}">
   <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/twitter-default.jpg' %}{% endblock %}">
 
   <!-- JSON-LD Structured Data -->
@@ -55,7 +57,7 @@
     "name": "Luxov",
     "url": "https://luxov.uz",
     "logo": "https://luxov.uz/static/images/logo.png",
-    "description": "Luxov — магазин премиальной продукции в Узбекистане.",
+    "description": "Luxov — Order your own design.",
     "sameAs": [
       "https://t.me/Iuxov", 
       "https://instagram.com/luxov.uz"
@@ -174,7 +176,7 @@
     <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:block;">
       <div class="res-log">
         <a href="https://luxov.uz">
-          <img src="{% static 'assets/img/lgmetl.png'%}" alt="Responsive Logo" class="white-logo">
+          <img src="/static/assets/img/lgmetl.png" alt="Responsive Logo" class="white-logo">
         </a>
       </div>
       <ul>
@@ -188,7 +190,7 @@
       <h2> Design is more than just an image.</h2>
       <p class="des">We create logos that are not only visually appealing but also convey meaning, style, and identity.</p>
       <figure>
-        <img src="{% static 'assets/img/lgmetl.png'%}" alt="img">
+        <img src="/static/assets/img/lgmetl.png" alt="img">
       </figure>
       <h3>Get in touch</h3>
 
@@ -209,17 +211,17 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="logo pl-3" style="padding-left: 4%;">
-              <img src="{% static 'assets/img/ghoustlg150.png'%}" alt="logo">
+              <img src="/static/assets/img/ghoustlg150.png" alt="logo">
               <p>This page designed by Ferrnando Luxov, Coded by Felix Luxov. </p>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="subscribe">
               <h3>Subscribe Newsletter</h3>
-              <p>Stay up to update with our latest news and designs.</p>
-              <form role="form" class="get-subscribee" id="subscribe-form" method="post">
+              
+              <form class="content-form" method="post" action="{% url 'index' %}">
                   {% csrf_token %}
-                  <input type="email" name="Email_Address" placeholder="Enter your email here" required="">
+                  <input type="email" name="email" placeholder="Enter your email here" required>
                   <button type="submit" class="btn bk">Subscribe</button>
               </form>
             </div>
@@ -239,7 +241,7 @@
                 </div>
               <div>
                 <span>Phone No:</span>
-                <h6><a href="callto:+998 97 370 37 07">+998 97 370 37 07</a></h6>
+                <h6><a href="callto:+998973703707">+998 97 370 37 07</a></h6>
               </div>
             </div>
             <div class="get-in-touch">

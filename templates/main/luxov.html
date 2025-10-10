@@ -135,7 +135,8 @@
             required
           ></textarea>
         </div>
-        <button class="lux-btn">Get Free Consultation</button>
+        {% csrf_token %}
+        <button type="submit" class="btn bk">Get Free Consultation</button>
       </form>
     </div>
   </div>

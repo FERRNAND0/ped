@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .forms import ContactForm
 import requests
 from django.conf import settings
-
+from .forms import IndexForm
 
 
 TEXT = 'Привет! Это сообщение от Python 🐍'
+
 
 def send_telegram_message(text):
     token= settings.BOT_TOKEN  # Ваш токен бота
@@ -24,6 +25,17 @@ def send_telegram_message(text):
 
 # Create your views here.
 def index(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            send_telegram_message(f"New contact form submission:\n\n" \
+                                f"Email: {form.cleaned_data['email']}\n" \
+)
+
+            return render(request, 'main/luxov.html', {'form': form, 'success': True})
+    else:
+        form = ContactForm()
     return render(request, 'main/index.html')
 
 def about(request):
@@ -31,6 +43,20 @@ def about(request):
 
 # def blog(request):
 #     return render(request, 'main/blog.html')
+
+def newsletter_subscribe(request):
+    if request.method == 'POST':
+        form = IndexForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Send Telegram message if needed
+            send_telegram_message(f"New newsletter subscription:\nEmail: {form.cleaned_data['email']}")
+            # Return a success response, maybe JSON for AJAX or a redirect with a success message
+            return render(request, 'main/luxov.html')
+        else:
+            # Return an error response
+            return render(request, 'main/index.html')
+
 
 def contact(request):
     if request.method == 'POST':
