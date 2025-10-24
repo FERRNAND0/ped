@@ -95,7 +95,7 @@
 -----------------------------------------------------------------------------------*/
 /* General Style */
 
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Luxurious+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comic+Relief:wght@400;700&family=Luxurious+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poiret+One&display=swap');
 
 :root {
   --theme-colour: rgb(124, 124, 124);
@@ -104,6 +104,7 @@
 
 body {
   font-family: "Bodoni Moda SC", sans-serif;
+  
   overflow-x: hidden;
   background-image: url("/static/assets/img/new2k.png");
   background-color: rgba(0, 0, 0, 0.2);

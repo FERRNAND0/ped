@@ -95,8 +95,7 @@
 -----------------------------------------------------------------------------------*/
 /* General Style */
 
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Luxurious+Script&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comic+Relief:wght@400;700&family=Luxurious+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poiret+One&display=swap");
 :root {
   --theme-colour: hsl(0, 0%, 34%);
   --common-colour: #000000;
@@ -111,6 +110,15 @@ body {
   background-size: cover; /* Add this */
   background-position: center; /* Change from 'right' */
   background-repeat: no-repeat; /* Add this */
+}
+p {
+  font-family: "Poiret One", sans-serif;
+}
+h1 {
+  font-family: "Luxurious Script";
+}
+h2 {
+  font-family: "Luxurious Script";
 }
 
 /* @media screen and (max-width: 768px) {
